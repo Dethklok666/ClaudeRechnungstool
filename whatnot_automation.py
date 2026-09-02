@@ -106,7 +106,9 @@ def ensure_logged_in(page: Page, log=print, timeout_seconds: int = 300) -> None:
 
 
 def _open_show_filter_menu(page: Page):
-    trigger = page.locator('button[id^="radix-"]').nth(0)
+    # Whatnot nutzt hier keine radix-IDs mehr; der Trigger-Button ist über das
+    # data-tooltip-id-Attribut seines inneren Wrapper-Divs identifizierbar.
+    trigger = page.locator('button:has([data-tooltip-id="shipments-new-saleschannel-filter"])')
     trigger.wait_for(state="visible", timeout=15000)
     options = page.get_by_role("menuitemradio")
     for attempt in range(3):
@@ -153,7 +155,7 @@ def list_shows(page: Page) -> list[ShowOption]:
 
 
 def _select_all_status(page: Page) -> None:
-    status_trigger = page.locator('button[id^="radix-"]').nth(1)
+    status_trigger = page.locator('button:has([data-tooltip-id="shipments-new-status-filter"])')
     alle_status_option = page.get_by_role("menuitemradio", name="Alle Status")
     for attempt in range(3):
         status_trigger.click()
