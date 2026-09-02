@@ -8,9 +8,10 @@ KLEINUNTERNEHMER_NOTE = (
 )
 
 # Wo die fertigen Rechnungs-PDFs abgelegt werden (Unterordner Jahr/Monat werden
-# automatisch angelegt).
-OUTPUT_BASE_DIR = Path(
-    r"C:\Users\rapha\OneDrive\Twitch\Abrechnungen\Whatnot_Rechnungen_und_Belege"
+# automatisch angelegt). Path.home() statt festem Benutzernamen, damit das
+# auf jedem Rechner funktioniert, auf dem dieser OneDrive-Ordner synchronisiert.
+OUTPUT_BASE_DIR = (
+    Path.home() / "OneDrive" / "Twitch" / "Abrechnungen" / "Whatnot_Rechnungen_und_Belege"
 )
 
 # Eigener, separater Chrome-Profilordner (NICHT der normale Chrome-Pfad).
