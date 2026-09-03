@@ -23,7 +23,7 @@ OUTPUT_BASE_DIR = (
 # Sitzung hier automatisiert weiterverwenden.
 import os
 
-BROWSER_PROFILE_DIR = Path(os.environ["LOCALAPPDATA"]) / "ClaudeRechnungstool" / "browser_profile"
+BROWSER_PROFILE_DIR = Path(os.environ["LOCALAPPDATA"]) / "ClaudeRechnungstool" / "browser_profile_v2"
 
 WHATNOT_BASE_URL = "https://www.whatnot.com"
 WHATNOT_SHIPMENTS_URL = f"{WHATNOT_BASE_URL}/dashboard/shipments"
