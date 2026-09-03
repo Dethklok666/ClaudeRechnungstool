@@ -27,9 +27,10 @@ eintragen, ggf. Testlauf aktivieren, Start klicken.
 - Rechnungs-PDFs landen unter `%USERPROFILE%\OneDrive\Twitch\Abrechnungen\Whatnot_Rechnungen_und_Belege\<Jahr>\<Monat>`
   (siehe [config.py](config.py), `OUTPUT_BASE_DIR`).
 - Der Login läuft in einem eigenen Chrome-Profil unter
-  `%LOCALAPPDATA%\ClaudeRechnungstool\browser_profile` – nicht dem normalen
-  Chrome-Profil, da Whatnot/Chrome die automatisierte Fernsteuerung des
-  echten Standardprofils verweigert.
+  `%LOCALAPPDATA%\ClaudeRechnungstool\browser_profile_v2` – nicht dem
+  normalen Chrome-Profil, da Whatnot/Chrome die automatisierte
+  Fernsteuerung des echten Standardprofils verweigert (siehe
+  [config.py](config.py), `BROWSER_PROFILE_DIR`).
 - Bei 0% MwSt wird automatisch ein Kleinunternehmer-Hinweis (§19 UStG) in
   die Rechnungsnotizen eingefügt.
 
