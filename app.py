@@ -3,10 +3,11 @@
 Login läuft in einem separaten, einmalig manuell eingeloggten Chrome-Profil
 (siehe setup_login.py). Danach hier Show auswählen und auf Start klicken.
 
-Playwright-Objekte dürfen nur auf dem Thread verwendet werden, der sie
-erzeugt hat. Deshalb läuft die komplette Browser-Steuerung in genau einem
-Hintergrund-Thread, der Befehle sequenziell aus einer Queue abarbeitet;
-Tkinter (Hauptthread) kommuniziert nur über Queues mit ihm.
+Patchright-Objekte (Drop-in-Ersatz für Playwright, siehe whatnot_automation.py)
+dürfen nur auf dem Thread verwendet werden, der sie erzeugt hat. Deshalb läuft
+die komplette Browser-Steuerung in genau einem Hintergrund-Thread, der
+Befehle sequenziell aus einer Queue abarbeitet; Tkinter (Hauptthread)
+kommuniziert nur über Queues mit ihm.
 """
 
 from __future__ import annotations
@@ -16,7 +17,7 @@ import threading
 import tkinter as tk
 from tkinter import ttk, scrolledtext
 
-from playwright.sync_api import sync_playwright
+from patchright.sync_api import sync_playwright
 
 import config
 import whatnot_automation as wa

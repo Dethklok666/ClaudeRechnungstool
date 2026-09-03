@@ -11,7 +11,7 @@ Jahr/Monat.
    - Installiert bei Bedarf automatisch Python 3.12 und Google Chrome
      (über winget, oder als Direkt-Download falls winget fehlt).
    - Legt eine virtuelle Umgebung an (`.venv`) und installiert die
-     Python-Abhängigkeiten (Playwright).
+     Python-Abhängigkeiten (Patchright).
 3. `login_setup.bat` doppelklicken und im sich öffnenden Chrome-Fenster
    einmalig manuell bei Whatnot einloggen (auch "Mit Google anmelden",
    falls genutzt). Fenster danach schließen. Die Sitzung bleibt in einem

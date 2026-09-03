@@ -13,7 +13,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
-from playwright.sync_api import BrowserContext, Page, Playwright, TimeoutError as PWTimeout
+from patchright.sync_api import BrowserContext, Page, Playwright, TimeoutError as PWTimeout
 
 import config
 
@@ -83,9 +83,10 @@ def parse_euro(text: str) -> float:
 
 def launch_context(playwright: Playwright, headless: bool = False) -> BrowserContext:
     config.BROWSER_PROFILE_DIR.mkdir(parents=True, exist_ok=True)
-    # channel="chrome" nutzt das im System installierte Google Chrome statt
-    # des von Playwright heruntergeladenen Chromium-Pakets (das auf diesem
-    # Rechner wegen einer ungültigen Side-by-Side-Assembly nicht startet).
+    # channel="chrome" nutzt das im System installierte, echte Google Chrome
+    # statt eines heruntergeladenen Chromium-Pakets – das ist außerdem genau
+    # die von Patchright empfohlene Kombination, um von Diensten wie
+    # Cloudflare nicht als automatisierter Browser erkannt zu werden.
     context = playwright.chromium.launch_persistent_context(
         user_data_dir=str(config.BROWSER_PROFILE_DIR),
         channel="chrome",

@@ -19,7 +19,7 @@ OUTPUT_BASE_DIR = (
 # Standardprofil (Sicherheitsmaßnahme gegen genau diese Art der Übernahme
 # eines bereits eingeloggten Profils). Deshalb: einmalig manuell (mit
 # normalem, nicht automatisiertem Chrome) in diesem eigenen Ordner bei
-# Whatnot einloggen – siehe setup_login.py – danach kann Playwright die
+# Whatnot einloggen – siehe setup_login.py – danach kann Patchright die
 # Sitzung hier automatisiert weiterverwenden.
 import os
 
